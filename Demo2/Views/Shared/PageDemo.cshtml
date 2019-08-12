@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+</head>
+
+<body>
+<h1>菜谱</h1>
+<h1>菜单</h1>
+@RenderBody()
+<div id="app">
+<h1>{{message}}</h1>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app', //DOM中id为app的HTML div标签
+        data: {
+            message: "test vue",
+        },
+        methods: {
+            changeMessage: function (value) {
+                
+            },
+        },
+        beforeCreate: function () {
+            
+        },
+        created: function () {
+            
+        },
+        beforeMount: function () {
+            
+        },
+        mounted: function () {
+            
+        },
+        beforeUpdate: function () {
+           
+        },
+        updated: function () {
+            
+        },
+        beforeDestroy: function () {
+            
+        },
+        destroyed: function () {
+            
+        }
+    })    
+</script>
+</html>

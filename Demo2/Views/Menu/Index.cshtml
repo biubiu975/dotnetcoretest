@@ -1,0 +1,336 @@
+@model object
+
+<!DOCTYPE html>
+
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>菜谱</title>
+</head>
+@* <link href="~/css/iview/iview.css" rel="stylesheet" type="text/css"/> *@
+@* <link href="~/css/element-ui/Element-ui.css" rel="stylesheet" type="text/css"/> *@
+
+<!-- iview -->
+@* <link rel="stylesheet" type="text/css" href="http://unpkg.com/iview/dist/styles/iview.css"> *@
+@* <script type="text/javascript" src="http://unpkg.com/iview/dist/iview.min.js"></script> *@
+
+<!-- element -->
+@* <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> *@
+@* <script src="https://unpkg.com/element-ui/lib/index.js"></script> *@
+<body>
+<style>
+    .time {
+        font-size: 13px;
+        color: #999;
+    }
+  
+    .bottom {
+        margin-top: 13px;
+        line-height: 12px;
+    }
+
+    .button {
+        padding: 0;
+        float: right;
+    }
+
+    .image {
+        width: 100%;
+        display: block;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        display: table;
+        content: "";
+    }
+  
+    .clearfix:after {
+        clear: both
+    }
+</style>
+<div id="app">
+    <el-row>
+        
+            
+        <el-col :span="20" style="width: 300px; padding: 5px 5px 5px 5px" v-for="(recipe) in recipeList" v-bind:key="recipe.id">
+            <Card>
+                <p slot="title">{{recipe.name}}<el-checkbox v-model="recipe.check" @@change="checkChange(recipe)" style="margin-left: 190px;"></el-checkbox></p>
+                <img style="width: 255px; height: 150px;" v-bind:src="recipe.url"/>
+                <p>简述：{{recipe.name}}</p>
+                <p>价格：{{recipe.price}}￥</p>
+                <p>数量： <el-input-number v-model="recipe.num" size="mini" :min="1" :max="10" label="描述文字"></el-input-number></p>
+            </Card>
+        </el-col>
+    </el-row>
+    <Modal
+        :value="modal1"
+        title="菜单预览"
+        width="700px;"
+        @@on-ok="ok"
+        @@on-cancel="cancel">
+        <template>
+            桌子编号：
+            <el-select v-model="table" placeholder="请选择桌子编号">
+                <el-option
+                    v-for="item in dinnerTables"
+                    :key="item.code"
+                    :label="item.name"
+                    :value="item.code"
+                    size="mini"
+                    :disabled="item.status != 0">
+                </el-option>
+            </el-select>
+        </template>
+        <el-table
+            :data="checkAllRepcipe"
+            style="width: 100%">
+            <el-table-column
+                type="index"
+                label="序号"
+                width="50"
+                align="center">
+            </el-table-column>
+            <el-table-column
+                label-position="left"
+                prop="name"
+                label="名称">
+            </el-table-column>
+            <el-table-column
+                prop="price"
+                label="售价(￥)"
+                width="100"
+                align="left">
+            </el-table-column>
+            <el-table-column
+                prop="num"
+                label="数量"
+                width="200"
+                align="center">
+                <template slot-scope="scope">
+                    <el-input-number v-model="scope.row.num" size="mini" @@change="calPrice" :min="1" :max="10"></el-input-number>
+                </template>
+            </el-table-column>
+            <el-table-column
+                label="金额(￥)"
+                width="100"
+                align="left">
+                <template slot-scope="scope">{{ scope.row.price * scope.row.num}}</template>
+            </el-table-column>
+            <el-table-column
+                label="操作"
+                width="50"
+                align="center">
+                <template slot-scope="scope">
+                    <el-checkbox v-model="scope.row.check" @@change="calPrice" style=""></el-checkbox>
+                </template>
+            </el-table-column>
+        </el-table>
+        <div style="font-size:17px; padding:30px 0 0 0; margin:0 0 -60px 0;">总计(￥)：{{allPrice}}</div>
+    </Modal>
+</div>
+</body>
+@* <script src="~/js/vue/vue2.6.10.js" type="text/javascript"></script> *@
+@* <script src="~/js/jquery/jquery3.3.1.js" type="text/javascript"></script> *@
+@* <script src="~/js/iview/iview3.4.1.js" type="text/javascript"></script>  *@
+@* <script src="~/js/elelment-ui/Element-ui.js" type="text/javascript"></script> *@
+@* <script src="~/js/ValidateJS.js" type="text/javascript"></script> *@
+<script>
+    var app = new Vue({
+        el: '#app', //DOM中id为app的HTML div标签
+        data: {
+            tabPosition: 'left',
+            allPrice: 0,
+            modal1: false,
+            currentDate: new Date(),
+            recipeList:[],
+            allRecipeList:[],
+            checkAllRepcipe: [],
+            dinnerTables:[],
+            table:''
+        },
+        methods: {
+            ok:function() {
+                //this.modal1 = true;
+                //验证数据
+                var that = this;
+                var msg = '';
+                if(isEmpty(that.table)){
+                    msg += "没有选择桌子<br>";
+                }
+                
+                if(that.allPrice == 0) {
+                    msg += "没有选择菜单<br>";
+                }
+                
+                var recipes = that.checkAllRepcipe.filter(function(recipe){return recipe.check === true});
+                //debugger;
+                if(isEmpty(msg)) {
+                    $.post("/Order/AddOrder", {
+                        uniqueCode:top.app.uniqueCode,
+                        tableCode:that.table,
+                        recipes: recipes,
+                        allPrice:that.allPrice
+                    },function (resp) {         
+                        if (resp.code === 1) {
+                            that.modal1 = false;
+                            top.app.alertMessage("success", resp.message);
+                            top.app.refreshRecipe();
+                        }
+                    }, 'json');
+                }else {
+                    top.app.alertMessage("warning", msg, true);
+                }
+                
+            },
+            cancel:function() {
+                this.modal1 = false;
+            },
+            getTypeRecipes:function(type_code) {
+                var that = this;
+                if(type_code === 'all') {
+                    that.recipeList = that.allRecipeList;
+                }else {
+                    that.recipeList = that.allRecipeList.filter(function(recipe){
+                        //debugger;
+                        return recipe.typeCode === type_code;
+                    });
+                }
+            },
+            changeChecked:function(recipe) {
+                //debugger;
+                var that = this;
+                for(var i = 0; i < that.checkAllRepcipe.length; i++) {
+                    if(that.checkAllRepcipe[i].code === recipe.code) {
+                        that.checkAllRepcipe[i].check = recipe.check;
+                    }
+                }
+            },
+            submitChecked:function() {
+                var that = this;
+                if(that.checkAllRepcipe.length > 0) {
+                    that.modal1 = true;
+                    that.calPrice();
+                } else {
+                    top.app.alertMessage('success', '没有选择菜品');
+                }
+            },
+            removeAllChecked: function(){
+                var that = this;
+                that.allRecipeList.forEach(function(value){
+                    value.check = false;
+                });
+                that.checkAllRepcipe = [];
+                that.modal1 = false;
+            },
+            refreshRecipe:function() {
+                var that = this;
+                that.allRecipeList = [];
+                that.dinnerTables = [];
+                that.getRecipeList();
+                that.checkAllRepcipe = [];
+                that.modal1 = false;
+                that.getDinnerTableList();
+                that.table = '';
+            },
+            checkChange:function(recipe) {
+                var that = this;
+                var check = recipe.check;
+                if(check) {
+                    that.checkAllRepcipe.push(recipe);
+                }else {
+                    for(var i = 0; i < that.checkAllRepcipe.length; i++) {
+                        if(that.checkAllRepcipe[i].code === recipe.code) {
+                            that.checkAllRepcipe.splice(i, 1);
+                        }
+                    }
+                }
+            },
+            calPrice: function(){
+                var that = this;
+                var allPrice = 0;
+                that.checkAllRepcipe.forEach(function(recipe) {
+                    if(recipe.check) {
+                        allPrice += recipe.num * recipe.price;
+                    }
+                });
+                that.allPrice = allPrice;
+                //debugger;
+            },
+            checkAllGroupChange: function (data) {
+                if (data.length === 3) {
+                    this.indeterminate = false;
+                    this.checkAll = true;
+                } else if (data.length > 0) {
+                    this.indeterminate = true;
+                    this.checkAll = false;
+                } else {
+                    this.indeterminate = false;
+                    this.checkAll = false;
+                }
+            },
+            getMenuList: function () {
+                var that = this;
+                var tcode = top.app.tableCode;
+                debugger;
+                $.get("/Menu/GetMenuList", {
+                    uniqueCode:top.app.uniqueCode,
+                    tableCode:tcode
+                },function (resp) {         
+                    if (resp.code === 1) {
+                        // debugger;
+                        that.menuList = resp.data;
+                    }
+                }, 'json');
+            },
+            getDinnerTableList: function () {
+                var that = this;
+                $.get("/DinnerTable/GetDinnerTableList", {
+                    uniqueCode:top.app.uniqueCode
+                },function (resp) {         
+                    if (resp.code === 1) {
+                        that.dinnerTables = resp.data;
+                        // debugger;
+                        // resp.data.forEach(function(value) {
+                        //     value.num = 1;
+                        //     value.checked = false;
+                        //     that.allRecipeList.push(value);
+                        // });
+                        
+                        // that.getTypeRecipes(top.app.tabIndex);
+                    }
+                }, 'json');
+                
+                // that.getTypeRecipes(top.app.tabIndex);
+            },
+            show: function () {
+                this.visible = true;
+            }
+        },
+        beforeCreate: function () {
+            
+        },
+        created: function () {
+            this.getMenuList();
+            // this.getDinnerTableList();
+        },
+        beforeMount: function () {
+            
+        },
+        mounted: function () {
+        },
+        beforeUpdate: function () {
+           
+        },
+        updated: function () {
+            
+        },
+        beforeDestroy: function () {
+            
+        },
+        destroyed: function () {
+            
+        }
+    })    
+</script>
+</html>

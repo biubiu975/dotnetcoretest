@@ -1,0 +1,414 @@
+@model object
+
+<!DOCTYPE html>
+
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>菜单类型编辑</title>
+</head>
+<body>
+<style>
+  .avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+    
+  }
+  .avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 268px;
+    height: 178px;
+    line-height: 178px;
+    text-align: center;
+  }
+  .avatar {
+    width: 268px;
+    height: 178px;
+    display: block;
+  }
+</style>
+<div id="app">
+    <el-row>
+        <el-col :span="12">
+            <el-form :inline="true" style="margin:20px 20px 10px 10px;">
+                <el-form-item label="菜单类型：">
+                    <el-select v-model="searchModel.typeCode" placeholder="请选择" @@change="changeType">
+                        <el-option
+                            v-for="item in recipeTypes2"
+                            :key="item.code"
+                            :label="item.name"
+                            :value="item.code">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="搜索名称：" prop="name" label-width="130px">
+                    <el-input v-model="searchName" placeholder="请输入内容"></el-input>
+                </el-form-item>
+                <el-form-item label="" prop="" label-width="">
+                                    <el-button type="primary" @@click="searchNameFun">查找</el-button></el-form-item>
+            </el-form>
+        </el-col>
+        <el-col :span="12">
+            <div style="float: right;">
+                <el-button type="primary" @@click="addDinnerTable" style="margin:20px 20px 10px 10px">添加</el-button>
+            </div>  
+        </el-col>
+    </el-row>
+    <template>
+        <el-row>
+            <el-col :span="20" style="width: 300px; padding: 5px 5px 5px 5px" v-for="(recipe) in recipeList" v-bind:key="recipe.id">
+                <Card>
+                    <p slot="title">{{recipe.name}}<el-checkbox v-model="recipe.check" @@change="checkChange(recipe)" style="margin-left: 180px;"></el-checkbox></p>
+                    <img style="width: 255px; height: 150px;" v-bind:src="recipe.url"/>
+                    <p>简述：{{recipe.name}}</p>
+                    <p>价格：{{recipe.price}}￥</p>
+                    <p>操作：
+                        <el-button type="text" size="mini" @@click="editRecipe(recipe)">修改</el-button>
+                        <el-button type="text" size="mini" @@click="deleteRecipe(recipe)">删除</el-button>
+                        <el-button v-if="recipe.isUse == 1" type="text" size="mini" @@click="isUseRecipe(recipe)">停用</el-button>
+                        <el-button v-if="recipe.isUse != 1" type="text" size="mini" @@click="isUseRecipe(recipe)">启用</el-button>
+                        </p>
+                </Card>
+            </el-col>
+            </el-row>
+    </template>
+    <template>
+        <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="totalNum"
+            :page-size="pageSize"
+            @@current-change="changePage">
+        </el-pagination>
+    </template>
+    <Modal
+        :value="showAddOrEdit"
+        :title="title"
+        width="500px;"
+        :mask-closable="false"
+        @@on-ok="addYes"
+        @@on-cancel="cancel">
+        <el-form v-bind:model="recipeModel">
+            <el-form-item label="菜单名称：" prop="name">
+                <el-input v-model="recipeModel.name" placeholder="请输入内容"></el-input>
+            </el-form-item>
+
+            <el-form-item label="上传图片：" prop="filePath">
+                <el-upload
+                    class="avatar-uploader"
+                    style="margin: 42px 99px -20px"
+                    action="/File/UploadFiles"
+                    :show-file-list="false"
+                    :on-success="handleAvatarSuccess"
+                    :before-upload="beforeAvatarUpload">
+                    <img v-if="imageUrl" :src="imageUrl" class="avatar" alt="">
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+            </el-form-item>
+            <el-form-item label="菜单类型名称：" prop="name">
+                <el-select v-model="recipeModel.typeCode" placeholder="请选择" style="width:468px">
+                    <el-option
+                        v-for="item in recipeTypes"
+                        :key="item.code"
+                        :label="item.name"
+                        :value="item.code">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="价格(￥)：" prop="price">
+                <el-input v-model="recipeModel.price" placeholder="请输入内容"></el-input>
+            </el-form-item>
+        </el-form>
+    </Modal>
+    <Modal
+        :value="showDeleted"
+        title="删除"
+        width="500px;"
+        :mask-closable="false"
+        @@on-ok="yesDeleted"
+        @@on-cancel="cancel">
+        <div>确定删除此条数据么？</div>
+    </Modal>
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el: '#app', //DOM中id为app的HTML div标签
+        data: {
+            searchName: '',
+            searchModel: {
+                typeCode:'',
+                name:'',
+            },
+            recipeModel:{
+                typeCode: '',
+                name:'',
+                url:'',
+                fileCode :'',
+                uniquecode: '',
+                price: '',
+                isSaveOrEdit: 1,//1save, 2edit
+            },
+            allRecipeList:[],
+            recipeList:[],
+            recipeTypes: [],
+            recipeTypes2: [],
+            imageUrl: '',
+            loadingStatus: false,
+            showDeleted: false,
+            totalNum: 0,
+            pageSize: 10,
+            pageNum: 1,
+            showAddOrEdit:false,
+            title:'',
+        },
+        methods: {
+            searchNameFun:function() {
+                let that = this;
+                debugger;
+                that.searchModel.name = that.searchName;
+                that.pageNum = 1;
+                that.getRecipeList();
+            },
+            isUseRecipe:function(row) {
+                let that = this;
+                $.get("/Recipe/IsUseRecipe", {
+                    uniqueCode:top.app.uniqueCode,
+                    code: row.code,
+                },function (resp) {  
+                    let type = resp.code == 1? 'success' : 'error';
+                    top.app.alertMessage(type, resp.message);
+                    if (resp.code === 1) {
+                        // that.pageNum = 1;
+                        that.getRecipeList();
+                        if(row.isUse == 1) {
+                            row.isUse = 0;
+                        }else if(row.isUse == 0) {
+                            row.isUse = 1;
+                        } 
+                    }
+                }, 'json');
+                //that.recipeModel.code = row.code;
+            },
+            changeType: function() {
+                //选择类型后重新获取菜单
+                let that = this;
+                that.pageNum = 1;
+                that.getRecipeList();
+            },
+            handleAvatarSuccess(resp, file) {
+                //debugger;
+                if(resp.code === 1) {
+                    this.imageUrl = resp.data.filePath;//URL.createObjectURL(file.raw);
+                    this.recipeModel.fileCode = resp.data.code; 
+                    this.recipeModel.url = resp.data.filePath;
+                }
+            },
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg' || file.type === 'image/png';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+        
+                if (!isJPG) {
+                  this.$message.error('上传头像图片只能是 JPG 格式!');
+                }
+                if (!isLt2M) {
+                  this.$message.error('上传头像图片大小不能超过 2MB!');
+                }
+                return isJPG && isLt2M;
+            },
+            handleUpload (file) {
+                this.file = file;
+                return false;
+            },
+            deleteRecipe:function(row) {
+                debugger;
+                let that = this;
+                that.showDeleted = true;
+                that.recipeModel.code = row.code;
+            },
+            editRecipe:function(row) {
+                debugger;
+                let that = this;
+                that.showAddOrEdit = true;
+                that.title = "修改";
+                that.recipeModel.name = row.name;
+                that.recipeModel.uniquecode = row.uniqueCode;
+                that.recipeModel.code = row.code;
+                that.recipeModel.price = row.price;
+                that.recipeModel.url = row.url;
+                that.recipeModel.typeCode = row.typeCode;
+                that.recipeModel.isSaveOrEdit = 2;
+                
+                that.imageUrl = row.url;
+            },
+            addDinnerTable: function() {
+                debugger;
+                let that = this;
+                that.showAddOrEdit = true;
+                that.title = "添加";
+                that.dinnerTableModel.isSaveOrEdit = 1;
+                that.dinnerTableModel.uniquecode = top.app.uniqueCode;
+            },
+            yesDeleted: function() {
+                let that = this;
+                $.get("/Recipe/deletedRecipe", {
+                    uniqueCode:top.app.uniqueCode,
+                    code: that.recipeModel.code,
+                },function (resp) {  
+                    let type = resp.code == 1? 'success' : 'error';
+                    top.app.alertMessage(type, resp.message);
+                    if (resp.code === 1) {
+                        // that.pageNum = 1;
+                        that.getRecipeList();
+                    }
+                }, 'json');
+                this.showDeleted = false;
+            },
+            addYes: function(){
+                let that = this;
+                let message = "";
+                if(isEmpty(that.recipeModel.name)) {
+                    message += "菜单名称不能为空<br>";
+                }
+                
+                if(isEmpty(that.recipeModel.typeCode)) {
+                    message += "菜单类型不能为空<br>";
+                }
+                
+                if(isEmpty(that.recipeModel.url)) {
+                    message += "菜单图片不能为空<br>";
+                }
+                
+                if(isEmpty(that.recipeModel.price)) {
+                    message += "价格不能为空<br>";
+                }else if(isNaN(that.recipeModel.price)){
+                    message += "价格必须为数字组成<br>";
+                }
+                if(isEmpty(message)) {
+                    that.recipeModel.uniquecode = top.app.uniqueCode;
+                    $.get("/Recipe/AddOrEditRecipe", {
+                        uniqueCode:top.app.uniqueCode,
+                        name: that.recipeModel.name,
+                        code: that.recipeModel.code,
+                        isSaveOrEdit: that.recipeModel.isSaveOrEdit,
+                        url: that.recipeModel.url,
+                        fileCode: that.recipeModel.fileCode,
+                        typeCode: that.recipeModel.typeCode,
+                        price: that.recipeModel.price,
+                    },function (resp) {  
+                        let type = resp.code == 1? 'success' : 'error';
+                        top.app.alertMessage(type, resp.message);
+                        if (resp.code === 1) {
+                            that.pageNum = 1;
+                            that.getRecipeList();
+                        }
+                    }, 'json');
+                }else {
+                    top.app.alertMessage('warning', message, true);
+                }
+                
+                this.showAddOrEdit = false;
+            },
+            cancel:function() {
+                this.showAddOrEdit = false;
+                this.showDeleted = false;
+            },
+            changePage:function(page) {
+                debugger;
+                this.pageNum = page;
+                this.getRecipeList();
+            },
+            tableRowClassName({row, rowIndex}) {
+                let temp = rowIndex % 2;
+                if (temp === 0) {
+                  return 'warning-row';
+                } else if (temp === 1) {
+                  return 'success-row';
+                }
+                return '';
+            },
+            getRecipeTypeList: function () {
+                let that = this;
+                $.get("/RecipeType/GetRecipeTypeList", {
+                    uniqueCode:top.app.uniqueCode,
+                },function (resp) {         
+                    if (resp.code === 1) {
+                        that.recipeTypes = resp.data.filter(function(type) {
+                            return type;
+                        });
+                        that.recipeTypes2 = resp.data.filter(function(type) {
+                            return type;
+                        });
+                        that.recipeTypes2.unshift({code:'', name: '全部'});//向数组头部添元素
+                    }
+                }, 'json');
+                
+            },
+            getRecipeList: function () {
+                let that = this;
+                $.get("/Recipe/GetRecipeList", {
+                    uniqueCode:top.app.uniqueCode,
+                    pageSize: that.pageSize,
+                    pageNum: that.pageNum,
+                    typeCode: that.searchModel.typeCode,
+                    name: that.searchModel.name,
+                },function (resp) {         
+                    if (resp.code === 1) {
+                        //debugger;
+                        // that.allRecipeList = resp.data.recipes;
+                        that.totalNum = resp.data.totalNum;
+                        that.recipeList = resp.data.recipes;
+                        //that.getTypeRecipes(that.searchModel.typeCode);
+                    }
+                }, 'json');
+                
+                // that.getTypeRecipes(top.app.tabIndex);
+            },
+            getTypeRecipes:function(type_code) {
+                debugger;
+                let that = this;
+                if(type_code === '') {
+                    that.recipeList = that.allRecipeList;
+                }else {
+                    that.recipeList = that.allRecipeList.filter(function(recipe){
+                        //debugger;
+                        return recipe.typeCode === type_code;
+                    });
+                }
+                debugger;
+            },
+        },
+        beforeCreate: function () {
+            
+        },
+        created: function () {
+            this.getRecipeList();
+            this.getRecipeTypeList();
+        },
+        beforeMount: function () {
+            
+        },
+        mounted: function () {
+        },
+        beforeUpdate: function () {
+           
+        },
+        updated: function () {
+            
+        },
+        beforeDestroy: function () {
+            
+        },
+        destroyed: function () {
+            
+        }
+    })    
+</script>
+</html>

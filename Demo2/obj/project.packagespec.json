@@ -1,0 +1,81 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/home/biu351/WorkSpace/Rider/Demo2/Demo2/Demo2.csproj",
+    "projectName": "Demo2",
+    "projectPath": "/home/biu351/WorkSpace/Rider/Demo2/Demo2/Demo2.csproj",
+    "outputPath": "/home/biu351/WorkSpace/Rider/Demo2/Demo2/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.2"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp2.2": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.2": {
+      "dependencies": {
+        "Microsoft.AspNetCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )",
+          "autoReferenced": true
+        },
+        "Microsoft.AspNetCore.Razor.Design": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )"
+        },
+        "Microsoft.Composition": {
+          "target": "Package",
+          "version": "[1.0.31, )"
+        },
+        "Microsoft.EntityFrameworkCore.Tools": {
+          "target": "Package",
+          "version": "[2.2.4, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )",
+          "autoReferenced": true
+        },
+        "MySql.Data.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[8.0.15, )"
+        },
+        "System.ComponentModel.Composition": {
+          "target": "Package",
+          "version": "[4.6.0-preview5.19224.8, )"
+        },
+        "Vue.Js.Element.UI": {
+          "target": "Package",
+          "version": "[2.4.8.1, )"
+        },
+        "Vue.Js.IView.UI": {
+          "target": "Package",
+          "version": "[2.14.3.5, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}
