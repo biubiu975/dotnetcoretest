@@ -1,0 +1,3 @@
+INSERT INTO test.main_user (id, code, username, password, uniquecode, is_deleted, date) VALUES (1, '1', 'zhangjie', '123456', 'code1', 0, '2019-06-05 13:27:02');
+INSERT INTO test.main_user (id, code, username, password, uniquecode, is_deleted, date) VALUES (2, '2', 'admin', '123456', 'code2', 0, '2019-06-05 13:27:20');
+INSERT INTO test.main_user (id, code, username, password, uniquecode, is_deleted, date) VALUES (3, '3', 'zj', '123456', 'code3', 0, '2019-06-05 13:27:22');
