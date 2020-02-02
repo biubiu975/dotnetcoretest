@@ -1,0 +1,122 @@
+@model object
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link href="~/css/iview/iview.css" rel="stylesheet" type="text/css"/>
+  <link href="~/css/element-ui/Element-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="~/js/vue/vue2.6.10.js" type="text/javascript"></script>
+  <script src="~/js/jquery/jquery3.3.1.js" type="text/javascript"></script>
+  <script src="~/js/iview/iview3.4.1.js" type="text/javascript"></script> 
+  <script src="~/js/elelment-ui/Element-ui.js" type="text/javascript"></script>
+  <script src="~/js/ValidateJS.js" type="text/javascript"></script>
+</head>
+<body style="background: url(/image/signinbg.jpg) center no-repeat fixed; background-size: cover;">
+<div id="app">
+    <div style="width: 500px; padding-top: 100px; border-radius: 4px; background: #FFFFFF; margin:150px auto; padding:30px 30px 30px 30px;">
+        <h1>登录</h1>
+        <el-form ref="form" :model="form" label-width="80px">
+            <el-form-item label="用户名">
+                <el-input v-model="form.username" style="width:300px"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+                <el-input v-model="form.password" style="width:300px"></el-input>
+            </el-form-item>
+            <el-form-item label="记住用户">
+                <el-checkbox v-model="form.isRemember">是</el-checkbox>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @@click="onSubmit">登录</el-button>
+                <el-button @@click="onCancel">取消</el-button>
+                <el-button type="primary" @@click="onRegister">注册</el-button>
+            </el-form-item>
+        </el-form>
+    </div>
+</div>
+</body>
+<script>
+    let app = new Vue({
+        el: '#app', //DOM中id为app的HTML div标签
+        data: {
+            form: {
+                username: '',
+                password: '',
+                isRemember: false,
+            },
+        },
+        methods: {
+            onSubmit() {
+                let that = this;
+                let isr = false;
+                $.get("/Sign/SignIn", {
+                    username: that.form.username,
+                    password: that.form.password,
+                    isRemember: that.form.isRemember,
+                },function (resp) {  
+                    let type = resp.code == 1? 'success' : 'error';
+                    that.$message({
+                        message: resp.message,
+                        type: type
+                    });
+                    if (resp.code === 1) {
+                        debugger;
+                        setTimeout(function(){
+                            window.location = "/home/index";
+                        }, 1500);
+                    }
+                }, 'json');
+            },
+            onCancel() {
+                let that = this;
+                that.form.username = "";
+                that.form.password = "";
+                that.form.isRemember = false;
+            },
+            onRegister() {
+                window.location = "/Sign/SignUpPage";
+            },
+            readCookieCache() {
+                let that = this;
+                let cache = document.cookie;
+                let userstr = cache.split("=")[1];
+                if(!isEmpty(userstr)) {
+                    let user = userstr.split("-");
+                    that.form.username = user[0];
+                    that.form.password = user[1];
+                    that.form.isRemember = Boolean(user[2]);
+                }
+                console.log(cache);
+            },
+        },
+        beforeCreate: function () {
+            
+        },
+        created: function () {
+        },
+        beforeMount: function () {
+            
+        },
+        mounted: function () {
+            let that = this;
+            that.readCookieCache();
+        },
+        beforeUpdate: function () {
+           
+        },
+        updated: function () {
+            
+        },
+        beforeDestroy: function () {
+            
+        },
+        destroyed: function () {
+            
+        }
+    })    
+</script>
+</html>
