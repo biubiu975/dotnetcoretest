@@ -1,0 +1,137 @@
+@model object
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<!-- jquery -->
+<script src="https://cdn.h5ds.com/lib/plugins/jquery.min.js"></script>
+
+<!-- vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- element样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- element组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="~/js/ValidateJS.js"></script>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    包含**的词语:
+    <el-input label="包含词语：" v-model="searchCiYuName" placeholder="请输入内容" style="width:200px;"></el-input>
+    
+    <el-button type="primary" v-on:click="searchCiYu">搜索</el-button>
+    
+    <div>数量:{{listNumCiYu}}</div>
+  </div>
+  <div style="padding-top: 20px">
+    <el-input
+      type="textarea"
+      :rows="10"
+      placeholder=""
+      v-model="textAreaCiYu">
+    </el-input>
+  </div>
+  <div style="margin-top: 50px">
+    包含**的字:
+    <el-input label="包含字：" v-model="searchZiName" placeholder="请输入内容" style="width:200px;"></el-input>
+    
+    <el-button type="primary" v-on:click="searchZi">搜索</el-button>
+    <div>数量:{{listNumZi}}</div>
+  </div>
+  <div style="padding-top: 20px">
+      <el-input
+        type="textarea"
+        :rows="10"
+        placeholder=""
+        v-model="textAreaZi">
+      </el-input>
+    </div>
+</div>
+</body>
+<script>
+  let app = new Vue({
+    el: '#app', //DOM中id为app的HTML div标签
+    data: {
+      searchCiYuName: '',
+      searchZiName:'',
+      textAreaCiYu: '',
+      textAreaZi: '',
+      listNumCiYu:0,
+      listNumZi:0,
+      tempArray:[],
+      data:{},
+    },
+    methods:{
+      searchCiYu(){
+        let that = this;
+        debugger;
+        let name = that.searchCiYuName;
+        if(!isEmpty(name.trim())) {
+          $.get("/Help/GetCiYu", {
+            md: name,
+          },function (resp) {
+            let type = resp.code == 1? 'success' : 'error';
+            that.$message({
+                message: resp.message,
+                type: type,
+                center: true,
+            });
+            that.textAreaCiYu = resp.data.result;
+            that.listNumCiYu = resp.data.listNum;
+          }, 'json');
+        }
+      },
+      searchZi(){
+        let that = this;
+        let name = that.searchZiName;
+        if(!isEmpty(name.trim())) {
+          $.get("/Help/GetZi", {
+            md: name,
+          },function (resp) {
+            let type = resp.code == 1? 'success' : 'error';
+            that.$message({
+                message: resp.message,
+                type: type,
+                center: true,
+            });
+            that.textAreaZi = resp.data.result;
+            that.listNumZi = resp.data.listNum;
+          }, 'json');
+        }
+      },
+    },
+    beforeCreate: function () {
+
+    },
+    created: function () {
+      // this.getRecipeList();
+      // this.getRecipeTypeList();
+    },
+    beforeMount: function () {
+
+    },
+    mounted: function () {
+    },
+    beforeUpdate: function () {
+
+    },
+    updated: function () {
+
+    },
+    beforeDestroy: function () {
+
+    },
+    destroyed: function () {
+
+    }
+  });
+</script>
+</html>
