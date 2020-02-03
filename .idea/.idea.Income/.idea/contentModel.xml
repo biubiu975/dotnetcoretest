@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Income.-1823948370.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Income" t="IncludeRecursive">
+        <e p="AppConfig.cs" t="Include" />
+        <e p="AssemblyHelper.cs" t="Include" />
+        <e p="Bussiness" t="Include">
+          <e p="Impl" t="Include">
+            <e p="RecipeService.cs" t="Include" />
+          </e>
+          <e p="Interface" t="Include">
+            <e p="IRecipeService.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ConfigurationManager.cs" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="BaseController.cs" t="Include" />
+          <e p="DinnerTableController.cs" t="Include" />
+          <e p="EditDataController.cs" t="Include" />
+          <e p="FileController.cs" t="Include" />
+          <e p="HelpController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="MenuController.cs" t="Include" />
+          <e p="MovieController.cs" t="Include" />
+          <e p="OrderController.cs" t="Include" />
+          <e p="RecipeController.cs" t="Include" />
+          <e p="RecipeTypeController.cs" t="Include" />
+          <e p="SignController.cs" t="Include" />
+        </e>
+        <e p="Data" t="Include">
+          <e p="Impl" t="Include">
+            <e p="DinnerTableRepository.cs" t="Include" />
+            <e p="FileRepository.cs" t="Include" />
+            <e p="MainUserRepository.cs" t="Include" />
+            <e p="OrderRecipeRepository.cs" t="Include" />
+            <e p="OrderRepository.cs" t="Include" />
+            <e p="RecipeRepository.cs" t="Include" />
+            <e p="RecipeTypeRepository.cs" t="Include" />
+          </e>
+          <e p="Interface" t="Include">
+            <e p="IDinnerTableRepository.cs" t="Include" />
+            <e p="IFileRepository.cs" t="Include" />
+            <e p="IMainUserRepository.cs" t="Include" />
+            <e p="IOrderRecipeRepository.cs" t="Include" />
+            <e p="IOrderRepository.cs" t="Include" />
+            <e p="IRecipeRepository.cs" t="Include" />
+            <e p="IRecipeTypeRepository.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DataContext.cs" t="Include" />
+        <e p="EFRepositoryBase.cs" t="Include" />
+        <e p="File" t="Include" />
+        <e p="Hubs" t="Include">
+          <e p="TestHub.cs" t="Include" />
+        </e>
+        <e p="IRepository.cs" t="Include" />
+        <e p="Income.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="Entity" t="Include">
+            <e p="DinnerTable.cs" t="Include" />
+            <e p="EntityBase.cs" t="Include" />
+            <e p="MainUser.cs" t="Include" />
+            <e p="Order.cs" t="Include" />
+            <e p="OrderRecipe.cs" t="Include" />
+            <e p="PaceType.cs" t="Include" />
+            <e p="Purchase.cs" t="Include" />
+            <e p="Recipe.cs" t="Include" />
+            <e p="RecipeType.cs" t="Include" />
+            <e p="UploadFile.cs" t="Include" />
+          </e>
+          <e p="ErrorViewModel.cs" t="Include" />
+          <e p="Movie.cs" t="Include" />
+          <e p="Requst" t="Include">
+            <e p="ActionCode.cs" t="Include" />
+            <e p="ApiResponse.cs" t="Include" />
+          </e>
+          <e p="Temp" t="Include">
+            <e p="DinnerTableModel.cs" t="Include" />
+            <e p="FileUpload.cs" t="Include" />
+            <e p="RecipeModel.cs" t="Include" />
+            <e p="RecipeTypeModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="DinnerTable" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="Test" t="Include">
+          <e p="TestClass.cs" t="Include" />
+        </e>
+        <e p="UnitOfWorkContextBase.cs" t="Include" />
+        <e p="Views" t="Include">
+          <e p="EditData" t="Include">
+            <e p="DinnerTableEdit.cshtml" t="Include" />
+            <e p="RecipeEdit.cshtml" t="Include" />
+            <e p="RecipeTypeEdit.cshtml" t="Include" />
+          </e>
+          <e p="Help" t="Include">
+            <e p="SearchZiCi.cshtml" t="Include" />
+          </e>
+          <e p="Home" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="Privacy.cshtml" t="Include" />
+          </e>
+          <e p="Menu" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Movie" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="ReadConfigure.cshtml" t="Include" />
+          </e>
+          <e p="Order" t="Include">
+            <e p="OrderData.cshtml" t="Include" />
+          </e>
+          <e p="Recipe" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="RecipeType" t="Include">
+            <e p="Index.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="Error.cshtml" t="Include" />
+            <e p="PageDemo.cshtml" t="Include" />
+            <e p="_CookieConsentPartial.cshtml" t="Include" />
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_MyLayout.cshtml" t="Include" />
+            <e p="_ValidationScriptsPartial.cshtml" t="Include" />
+          </e>
+          <e p="Sign" t="Include">
+            <e p="Index.cshtml" t="Include" />
+            <e p="SignInPage.cshtml" t="Include" />
+            <e p="SignUpPage.cshtml" t="Include" />
+          </e>
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="_ViewStart.cshtml" t="Include" />
+        </e>
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="mono_crash.mem.10625.1.blob" t="Include" />
+        <e p="mono_crash.mem.12088.1.blob" t="Include" />
+        <e p="mono_crash.mem.15457.1.blob" t="Include" />
+        <e p="mono_crash.mem.15965.1.blob" t="Include" />
+        <e p="mono_crash.mem.22556.1.blob" t="Include" />
+        <e p="mono_crash.mem.26252.1.blob" t="Include" />
+        <e p="mono_crash.mem.26589.1.blob" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="Income.AssemblyInfo.cs" t="Include" />
+              <e p="Income.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="element-ui" t="Include">
+              <e p="Element-ui.css" t="Include" />
+              <e p="fonts" t="Include">
+                <e p="element-icons.woff" t="Include" />
+              </e>
+            </e>
+            <e p="iview" t="Include">
+              <e p="fonts" t="Include">
+                <e p="ionicons.ttf" t="Include" />
+                <e p="ionicons.woff" t="Include" />
+                <e p="ionicons.woff2" t="Include" />
+              </e>
+              <e p="iview.css" t="Include" />
+            </e>
+            <e p="layui" t="Include">
+              <e p="layui.css" t="Include" />
+            </e>
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="dist" t="Include">
+            <e p="index.html" t="Include" />
+            <e p="static" t="Include">
+              <e p="css" t="Include">
+                <e p="app.73cb5fed2a42a5e2f0827ebd765620c6.css" t="Include" />
+                <e p="app.73cb5fed2a42a5e2f0827ebd765620c6.css.map" t="Include" />
+              </e>
+              <e p="fonts" t="Include">
+                <e p="element-icons.535877f.woff" t="Include" />
+                <e p="element-icons.732389d.ttf" t="Include" />
+              </e>
+              <e p="img" t="Include">
+                <e p="icon.551539f.png" t="Include" />
+              </e>
+              <e p="js" t="Include">
+                <e p="app.a05c55c50552995e7e41.js" t="Include" />
+                <e p="app.a05c55c50552995e7e41.js.map" t="Include" />
+                <e p="manifest.2ae2e69a05c33dfc65f8.js" t="Include" />
+                <e p="manifest.2ae2e69a05c33dfc65f8.js.map" t="Include" />
+                <e p="vendor.e9a015b3057820ad9a87.js" t="Include" />
+                <e p="vendor.e9a015b3057820ad9a87.js.map" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="file" t="Include">
+            <e p="20191206" t="Include">
+              <e p="352221ea-af35-4212-8e68-f1fe0038e3c0.png" t="Include" />
+              <e p="5781377e-7d3b-41f8-8b08-c400bacd4ac8.png" t="Include" />
+            </e>
+          </e>
+          <e p="image" t="Include">
+            <e p="qwerqweadsfds.pg" t="Include" />
+            <e p="signinbg.jpg" t="Include" />
+          </e>
+          <e p="index.html" t="Include" />
+          <e p="js" t="Include">
+            <e p="ValidateJS.js" t="Include" />
+            <e p="elelment-ui" t="Include">
+              <e p="Element-ui.js" t="Include" />
+            </e>
+            <e p="iview" t="Include">
+              <e p="iview3.4.1.js" t="Include" />
+            </e>
+            <e p="jquery" t="Include">
+              <e p="jquery3.3.1.js" t="Include" />
+            </e>
+            <e p="layui" t="Include">
+              <e p="layui.js" t="Include" />
+            </e>
+            <e p="site.js" t="Include" />
+            <e p="vue" t="Include">
+              <e p="vue2.6.10.js" t="Include" />
+            </e>
+          </e>
+          <e p="lib" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p="LICENSE" t="Include" />
+              <e p="dist" t="Include">
+                <e p="css" t="Include">
+                  <e p="bootstrap-grid.css" t="Include" />
+                  <e p="bootstrap-grid.css.map" t="Include" />
+                  <e p="bootstrap-grid.min.css" t="Include" />
+                  <e p="bootstrap-grid.min.css.map" t="Include" />
+                  <e p="bootstrap-reboot.css" t="Include" />
+                  <e p="bootstrap-reboot.css.map" t="Include" />
+                  <e p="bootstrap-reboot.min.css" t="Include" />
+                  <e p="bootstrap-reboot.min.css.map" t="Include" />
+                  <e p="bootstrap.css" t="Include" />
+                  <e p="bootstrap.css.map" t="Include" />
+                  <e p="bootstrap.min.css" t="Include" />
+                  <e p="bootstrap.min.css.map" t="Include" />
+                </e>
+                <e p="js" t="Include">
+                  <e p="bootstrap.bundle.js" t="Include" />
+                  <e p="bootstrap.bundle.js.map" t="Include" />
+                  <e p="bootstrap.bundle.min.js" t="Include" />
+                  <e p="bootstrap.bundle.min.js.map" t="Include" />
+                  <e p="bootstrap.js" t="Include" />
+                  <e p="bootstrap.js.map" t="Include" />
+                  <e p="bootstrap.min.js" t="Include" />
+                  <e p="bootstrap.min.js.map" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="jquery" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+              <e p="dist" t="Include">
+                <e p="jquery.js" t="Include" />
+                <e p="jquery.min.js" t="Include" />
+                <e p="jquery.min.map" t="Include" />
+              </e>
+            </e>
+            <e p="jquery-validation" t="Include">
+              <e p="LICENSE.md" t="Include" />
+              <e p="dist" t="Include">
+                <e p="additional-methods.js" t="Include" />
+                <e p="additional-methods.min.js" t="Include" />
+                <e p="jquery.validate.js" t="Include" />
+                <e p="jquery.validate.min.js" t="Include" />
+              </e>
+            </e>
+            <e p="jquery-validation-unobtrusive" t="Include">
+              <e p="LICENSE.txt" t="Include" />
+              <e p="jquery.validate.unobtrusive.js" t="Include" />
+              <e p="jquery.validate.unobtrusive.min.js" t="Include" />
+            </e>
+          </e>
+          <e p="static" t="Include">
+            <e p="css" t="Include">
+              <e p="app.73cb5fed2a42a5e2f0827ebd765620c6.css" t="Include" />
+              <e p="app.73cb5fed2a42a5e2f0827ebd765620c6.css.map" t="Include" />
+            </e>
+            <e p="fonts" t="Include">
+              <e p="element-icons.535877f.woff" t="Include" />
+              <e p="element-icons.732389d.ttf" t="Include" />
+            </e>
+            <e p="img" t="Include">
+              <e p="icon.551539f.png" t="Include" />
+            </e>
+            <e p="js" t="Include">
+              <e p="app.a05c55c50552995e7e41.js" t="Include" />
+              <e p="app.a05c55c50552995e7e41.js.map" t="Include" />
+              <e p="manifest.2ae2e69a05c33dfc65f8.js" t="Include" />
+              <e p="manifest.2ae2e69a05c33dfc65f8.js.map" t="Include" />
+              <e p="vendor.e9a015b3057820ad9a87.js" t="Include" />
+              <e p="vendor.e9a015b3057820ad9a87.js.map" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Income.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

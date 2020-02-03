@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c4a20e18-9c4a-42b5-95fb-bbb62cd112f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Demo2/Hubs/TestHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/bin/Debug/netcoreapp2.2/Demo2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Demo2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Pages/DinnerTable/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Pages/DinnerTable/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/EditData/DinnerTableEdit.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/EditData/DinnerTableEdit.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/EditData/RecipeEdit.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/EditData/RecipeEdit.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/EditData/RecipeTypeEdit.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/EditData/RecipeTypeEdit.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Home/Privacy.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Home/Privacy.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Menu/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Menu/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Movie/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Movie/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Movie/ReadConfigure.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Movie/ReadConfigure.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Order/OrderData.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Order/OrderData.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Recipe/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Recipe/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/RecipeType/Index.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/RecipeType/Index.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/PageDemo.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/PageDemo.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_Layout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_Layout.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_MyLayout.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_MyLayout.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_ValidationScriptsPartial.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/_ViewImports.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/_ViewImports.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/_ViewStart.g.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Debug/netcoreapp2.2/Razor/Views/_ViewStart.g.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Demo2.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Demo2.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/Demo2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/Demo2.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Demo2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Demo2/obj/project.packagespec.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Demo2/Hubs/TestHub.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+              <folding>
+                <marker date="1566306039521" expanded="true" signature="57:227" ph="{...}" />
+                <marker date="1566306039521" expanded="true" signature="88:225" ph="{...}" />
+                <marker date="1566306039521" expanded="true" signature="144:219" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Demo2/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+              <folding>
+                <marker date="1566306839647" expanded="false" signature="6:557" ph="..." />
+                <marker date="1566306839647" expanded="true" signature="574:3823" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="601:3821" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="660:723" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="946:2701" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="957:1407" ph="/* services.Configure&lt;CookiePolicyOptions&gt;(options =&gt; ... */" />
+                <marker date="1566306839647" expanded="true" signature="1556:2007" ph="/* var accessImpleAndInterfaces = AssemblyHelper.GetImpleAndInterfaces(&quot;Demo2.Data&quot;, &quot;Repository&quot;); ... */" />
+                <marker date="1566306839647" expanded="true" signature="2889:3815" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="2936:3013" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="3030:3289" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="3445:3650" ph="{...}" />
+                <marker date="1566306839647" expanded="true" signature="3736:3803" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FFD7FF6C-00B2-45C5-9639-6B527C6E2AFB/9c/6aa4c076/SignalRAppBuilderExtensions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/32C7DA0B-DE3E-4433-B1FA-3A6000248638/7d/28515fbb/ServiceCollectionServiceExtensions.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8652">
+              <caret line="412" column="37" selection-start-line="412" selection-start-column="37" selection-end-line="412" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F129BFFB-E30E-4E83-BAD7-40868B141DB2/66/b09e62ee/IHubClients`1.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1470">
+              <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Demo2/Hubs/TestHub.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FFD7FF6C-00B2-45C5-9639-6B527C6E2AFB/9c/6aa4c076/SignalRAppBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Demo2/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F129BFFB-E30E-4E83-BAD7-40868B141DB2/66/b09e62ee/IHubClients`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/32C7DA0B-DE3E-4433-B1FA-3A6000248638/7d/28515fbb/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Demo2/Hubs/TestHub.cs" />
+        <option value="$PROJECT_DIR$/Demo2/Startup.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-3" />
+    <option name="y" value="-1" />
+    <option name="width" value="1926" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="SolutionExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="AssemblyExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.基于范围" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Demo2">
+    <configuration name="Demo2" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Demo2/Demo2.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="Demo2" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo2: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Demo2/Demo2.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4a20e18-9c4a-42b5-95fb-bbb62cd112f7" name="Default Changelist" comment="" />
+      <created>1565870101208</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565870101208</updated>
+      <workItem from="1565870102564" duration="227000" />
+      <workItem from="1566305418646" duration="1652000" />
+      <workItem from="1566307129114" duration="664000" />
+      <workItem from="1566395751376" duration="172000" />
+      <workItem from="1566395981523" duration="240000" />
+      <workItem from="1566912795209" duration="26000" />
+      <workItem from="1566912855127" duration="19000" />
+      <workItem from="1567002401294" duration="38000" />
+      <workItem from="1567002539735" duration="62000" />
+      <workItem from="1567080126535" duration="809000" />
+      <workItem from="1567081135698" duration="13000" />
+      <workItem from="1567092115475" duration="418000" />
+      <workItem from="1567605320775" duration="27000" />
+      <workItem from="1567605375734" duration="16000" />
+      <workItem from="1567774268281" duration="67000" />
+      <workItem from="1567774369388" duration="15000" />
+      <workItem from="1567948650303" duration="35000" />
+      <workItem from="1567948733379" duration="41000" />
+      <workItem from="1568295158575" duration="26000" />
+      <workItem from="1568295249592" duration="139000" />
+      <workItem from="1568466625521" duration="48000" />
+      <workItem from="1568466778871" duration="599000" />
+      <workItem from="1568818820400" duration="46000" />
+      <workItem from="1568818933482" duration="119000" />
+      <workItem from="1569153264041" duration="42000" />
+      <workItem from="1569758453804" duration="39000" />
+      <workItem from="1570706575374" duration="29000" />
+      <workItem from="1570711671624" duration="616000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6244000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15688367" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="调试" sideWeight="0.4994664" visible="true" weight="0.3297414" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39827773" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="REST Client" order="13" />
+      <window_info anchor="bottom" id="Terminal" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.50053364" side_tool="true" visible="true" weight="0.3297414" />
+      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.4994664" weight="0.3275862" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Demo2/Hubs/TestHub.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding>
+            <marker date="1566306039521" expanded="true" signature="57:227" ph="{...}" />
+            <marker date="1566306039521" expanded="true" signature="88:225" ph="{...}" />
+            <marker date="1566306039521" expanded="true" signature="144:219" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FFD7FF6C-00B2-45C5-9639-6B527C6E2AFB/9c/6aa4c076/SignalRAppBuilderExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/32C7DA0B-DE3E-4433-B1FA-3A6000248638/7d/28515fbb/ServiceCollectionServiceExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8652">
+          <caret line="412" column="37" selection-start-line="412" selection-start-column="37" selection-end-line="412" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F129BFFB-E30E-4E83-BAD7-40868B141DB2/66/b09e62ee/IHubClients`1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Demo2/Startup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="80" column="33" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+          <folding>
+            <marker date="1566306839647" expanded="false" signature="6:557" ph="..." />
+            <marker date="1566306839647" expanded="true" signature="574:3823" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="601:3821" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="660:723" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="946:2701" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="957:1407" ph="/* services.Configure&lt;CookiePolicyOptions&gt;(options =&gt; ... */" />
+            <marker date="1566306839647" expanded="true" signature="1556:2007" ph="/* var accessImpleAndInterfaces = AssemblyHelper.GetImpleAndInterfaces(&quot;Demo2.Data&quot;, &quot;Repository&quot;); ... */" />
+            <marker date="1566306839647" expanded="true" signature="2889:3815" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="2936:3013" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="3030:3289" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="3445:3650" ph="{...}" />
+            <marker date="1566306839647" expanded="true" signature="3736:3803" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

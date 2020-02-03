@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/yuluo/WorkSpace/Rider/income/Income/Income.csproj": {}
+  },
+  "projects": {
+    "/home/yuluo/WorkSpace/Rider/income/Income/Income.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/yuluo/WorkSpace/Rider/income/Income/Income.csproj",
+        "projectName": "Income",
+        "projectPath": "/home/yuluo/WorkSpace/Rider/income/Income/Income.csproj",
+        "packagesPath": "/home/yuluo/.nuget/packages/",
+        "outputPath": "/home/yuluo/WorkSpace/Rider/income/Income/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/yuluo/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Composition": {
+              "target": "Package",
+              "version": "[1.0.31, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.ComponentModel.Composition": {
+              "target": "Package",
+              "version": "[4.6.0-preview5.19224.8, )"
+            },
+            "Vue.Js.Element.UI": {
+              "target": "Package",
+              "version": "[2.4.8.1, )"
+            },
+            "Vue.Js.IView.UI": {
+              "target": "Package",
+              "version": "[2.14.3.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
